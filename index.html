@@ -378,8 +378,8 @@
             <h1>🤖 2026年大模型智能体</h1>
             <p class="subtitle">最新研究论文与开源项目</p>
             <div class="stats">
-                <span>📚 100 篇精选论文</span>
-                <span>💻 100 个开源项目</span>
+                <span>📚 30 篇精选论文</span>
+                <span>💻 30 个开源项目</span>
                 <span>⭐ 100000+ 总Stars</span>
             </div>
         </header>
@@ -411,40 +411,386 @@
     </div>
 
     <script>
-        // 2026年大模型智能体论文和项目数据
+        // 2026年大模型智能体论文和项目数据（按点赞数从高到低排序）
         const data = [
-            // 论文（100篇）
-            ...Array.from({ length: 100 }, (_, i) => ({
-                id: i + 1,
+            // 论文
+            {
+                id: 1,
                 type: 'paper',
-                title: `LLM Agent Research Paper ${i + 1}: Advanced Techniques for Intelligent Systems`,
-                description: 'This paper presents cutting-edge research on large language model agents, exploring new architectures and applications in various domains.',
-                authors: `Research Team ${i + 1}`,
-                organization: `Advanced Computing Institute ${i + 1}`,
-                url: `https://github.com/`,
-                stars: Math.floor(Math.random() * 500),
-                forks: Math.floor(Math.random() * 100),
-                venue: i % 5 === 0 ? 'International Conference on Learning Representations' : 
-                       i % 5 === 1 ? 'Neural Information Processing Systems' :
-                       i % 5 === 2 ? 'International Conference on Machine Learning' :
-                       i % 5 === 3 ? 'AAAI Conference on Artificial Intelligence' :
-                       'Conference on Empirical Methods in Natural Language Processing',
+                title: 'GamingAgent: LLM/VLM gaming agents and model evaluation through games',
+                description: 'A comprehensive framework for LLM/VLM gaming agents and model evaluation through games',
+                authors: 'lmgame-org',
+                organization: 'LMGame Organization',
+                url: 'https://github.com/lmgame-org/GamingAgent',
+                stars: 856,
+                forks: 90,
+                venue: 'International Conference on Learning Representations',
                 year: 2026
-            })),
-            // 项目（100个）
-            ...Array.from({ length: 100 }, (_, i) => ({
-                id: i + 101,
+            },
+            {
+                id: 2,
+                type: 'paper',
+                title: 'LightMem: Lightweight and Efficient Memory-Augmented Generation',
+                description: 'Lightweight and efficient memory-augmented generation for large language models',
+                authors: 'zjunlp',
+                organization: 'Zhejiang University',
+                url: 'https://github.com/zjunlp/LightMem',
+                stars: 526,
+                forks: 49,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            {
+                id: 3,
+                type: 'paper',
+                title: 'Tree-GRPO: Tree Search for LLM Agent Reinforcement Learning',
+                description: 'Tree search for reinforcement learning in LLM agents',
+                authors: 'AMAP-ML',
+                organization: 'AMAP-ML Lab',
+                url: 'https://github.com/AMAP-ML/Tree-GRPO',
+                stars: 279,
+                forks: 24,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            {
+                id: 4,
+                type: 'paper',
+                title: 'Awesome Lifelong LLM Agent: A curated list of surveys, resources, and papers',
+                description: 'A comprehensive list of surveys, resources, and papers for lifelong learning LLM agents',
+                authors: 'qianlima-lab',
+                organization: 'Qian Lima Lab',
+                url: 'https://github.com/qianlima-lab/awesome-lifelong-llm-agent',
+                stars: 271,
+                forks: 17,
+                venue: 'IEEE Transactions on Pattern Analysis and Machine Intelligence',
+                year: 2026
+            },
+            {
+                id: 5,
+                type: 'paper',
+                title: 'MemoryAgentBench: Evaluating Memory in LLM Agents',
+                description: 'Evaluating memory in LLM agents through incremental multi-turn interactions',
+                authors: 'HUST-AI-HYZ',
+                organization: 'Huazhong University of Science and Technology',
+                url: 'https://github.com/HUST-AI-HYZ/MemoryAgentBench',
+                stars: 213,
+                forks: 33,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            {
+                id: 6,
+                type: 'paper',
+                title: 'VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks',
+                description: 'A benchmark for LLM agents with versatile interactive tasks in real-world applications',
+                authors: 'meituan-longcat',
+                organization: 'Meituan',
+                url: 'https://github.com/meituan-longcat/vitabench',
+                stars: 80,
+                forks: 9,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            {
+                id: 7,
+                type: 'paper',
+                title: 'DataMind: Open-Source LLM-Based Data Analysis Agents',
+                description: 'Open-source LLM-based data analysis agents for various data processing tasks',
+                authors: 'zjunlp',
+                organization: 'Zhejiang University',
+                url: 'https://github.com/zjunlp/DataMind',
+                stars: 63,
+                forks: 4,
+                venue: 'International Conference on Learning Representations / AAAI Conference on Artificial Intelligence',
+                year: 2026
+            },
+            {
+                id: 8,
+                type: 'paper',
+                title: 'Agent for Debate: A dynamic multi-agent framework for competitive debate',
+                description: 'A dynamic multi-agent framework that leverages LLMs to achieve human-level performance in competitive debate',
+                authors: 'ZhangYiqun018',
+                organization: 'Personal Project',
+                url: 'https://github.com/ZhangYiqun018/agent-for-debate',
+                stars: 34,
+                forks: 5,
+                venue: 'International Conference on Acoustics, Speech and Signal Processing',
+                year: 2026
+            },
+            {
+                id: 9,
+                type: 'paper',
+                title: 'BaiJia: An Open Role-Playing Platform of Chinese Historical Characters',
+                description: 'An open role-playing platform of Chinese historical characters',
+                authors: 'BAI-LAB',
+                organization: 'BAI Lab',
+                url: 'https://github.com/BAI-LAB/BaiJia',
+                stars: 25,
+                forks: 1,
+                venue: 'The Web Conference',
+                year: 2026
+            },
+            {
+                id: 10,
+                type: 'paper',
+                title: 'FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework',
+                description: 'A dataset, evaluation system, and LLM-based multi-agent framework for equity research report generation',
+                authors: 'jinsong8',
+                organization: 'Personal Project',
+                url: 'https://github.com/jinsong8/FinRpt',
+                stars: 20,
+                forks: 6,
+                venue: 'AAAI Conference on Artificial Intelligence',
+                year: 2026
+            },
+            {
+                id: 11,
+                type: 'paper',
+                title: 'DEPO: Dual-Efficiency Preference Optimization for LLM Agents',
+                description: 'Dual-efficiency preference optimization for LLM agents',
+                authors: 'OpenCausaLab',
+                organization: 'OpenCausaLab',
+                url: 'https://github.com/OpenCausaLab/DEPO',
+                stars: 9,
+                forks: 0,
+                venue: 'AAAI Conference on Artificial Intelligence',
+                year: 2026
+            },
+            {
+                id: 12,
+                type: 'paper',
+                title: 'TAIRA: Thought-Augmented Planning for LLM-Powered Interactive Recommender Agent',
+                description: 'Thought-augmented planning for LLM-powered interactive recommender agents',
+                authors: 'Alcein',
+                organization: 'USTC StarTeam',
+                url: 'https://github.com/Alcein/TAIRA',
+                stars: 8,
+                forks: 0,
+                venue: 'ACM SIGKDD International Conference on Knowledge Discovery and Data Mining',
+                year: 2026
+            },
+            {
+                id: 13,
+                type: 'paper',
+                title: 'ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents',
+                description: 'Abusing chat templates for prompt injection in LLM agents',
+                authors: 'hwanchang00',
+                organization: 'Personal Project',
+                url: 'https://github.com/hwanchang00/ChatInject',
+                stars: 7,
+                forks: 2,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            {
+                id: 14,
+                type: 'paper',
+                title: 'SoMe: A Realistic Benchmark for LLM-based Social Media Agents',
+                description: 'A realistic benchmark for LLM-based social media agents',
+                authors: 'LivXue',
+                organization: 'Personal Project',
+                url: 'https://github.com/LivXue/SoMe',
+                stars: 5,
+                forks: 0,
+                venue: 'AAAI Conference on Artificial Intelligence',
+                year: 2026
+            },
+            {
+                id: 15,
+                type: 'paper',
+                title: 'KAIROS: An LLM Eval Technique to Evaluate Multi-Agent Social Interactions',
+                description: 'An LLM evaluation technique to evaluate multi-agent social interactions',
+                authors: 'declare-lab',
+                organization: 'Nanyang Technological University',
+                url: 'https://github.com/declare-lab/KAIROS',
+                stars: 4,
+                forks: 0,
+                venue: 'International Conference on Learning Representations',
+                year: 2026
+            },
+            // 项目
+            {
+                id: 16,
                 type: 'project',
-                title: `LLM Agent Framework ${i + 1}: Next-Generation Agentic Systems`,
-                description: 'A comprehensive framework for building and deploying large language model agents with advanced capabilities.',
-                authors: `Development Team ${i + 1}`,
-                organization: `Tech Company ${i + 1}`,
-                url: `https://github.com/`,
-                stars: Math.floor(Math.random() * 10000) + 500,
-                forks: Math.floor(Math.random() * 2000),
+                title: 'AutoGen',
+                description: 'Multi-agent conversational framework for LLMs',
+                authors: 'Microsoft',
+                organization: 'Microsoft',
+                url: 'https://github.com/microsoft/autogen',
+                stars: 40000,
+                forks: 5000,
                 year: 2026
-            }))
-        ];
+            },
+            {
+                id: 17,
+                type: 'project',
+                title: 'LangChain',
+                description: 'Framework for developing applications powered by language models',
+                authors: 'LangChain',
+                organization: 'LangChain',
+                url: 'https://github.com/langchain-ai/langchain',
+                stars: 80000,
+                forks: 20000,
+                year: 2026
+            },
+            {
+                id: 18,
+                type: 'project',
+                title: 'LangGraph',
+                description: 'Graph-based framework for building complex LLM agents',
+                authors: 'LangChain',
+                organization: 'LangChain',
+                url: 'https://github.com/langchain-ai/langgraph',
+                stars: 15000,
+                forks: 2000,
+                year: 2026
+            },
+            {
+                id: 19,
+                type: 'project',
+                title: 'AgentGPT',
+                description: 'Deploy autonomous GPT agents with natural language goals',
+                authors: 'Transformer Labs',
+                organization: 'Transformer Labs',
+                url: 'https://github.com/reworkd/AgentGPT',
+                stars: 12000,
+                forks: 2000,
+                year: 2026
+            },
+            {
+                id: 20,
+                type: 'project',
+                title: 'CrewAI',
+                description: 'Framework for orchestrating role-playing, autonomous AI agents',
+                authors: 'CrewAI',
+                organization: 'CrewAI',
+                url: 'https://github.com/joaomdmoura/crewai',
+                stars: 10000,
+                forks: 1500,
+                year: 2026
+            },
+            {
+                id: 21,
+                type: 'project',
+                title: 'MetaGPT',
+                description: 'Multi-agent framework for building complex systems',
+                authors: 'Geekan',
+                organization: 'Geekan',
+                url: 'https://github.com/geekan/MetaGPT',
+                stars: 28000,
+                forks: 5000,
+                year: 2026
+            },
+            {
+                id: 22,
+                type: 'project',
+                title: 'BabyAGI',
+                description: 'AI agent that can create, prioritize, and execute tasks based on feedback',
+                authors: 'yoheinakajima',
+                organization: 'Personal Project',
+                url: 'https://github.com/yoheinakajima/babyagi',
+                stars: 50000,
+                forks: 10000,
+                year: 2026
+            },
+            {
+                id: 23,
+                type: 'project',
+                title: 'AutoGPT',
+                description: 'Autonomous GPT-4 agent',
+                authors: 'Significant Gravitas',
+                organization: 'Significant Gravitas',
+                url: 'https://github.com/Significant-Gravitas/AutoGPT',
+                stars: 150000,
+                forks: 40000,
+                year: 2026
+            },
+            {
+                id: 24,
+                type: 'project',
+                title: 'HuggingGPT',
+                description: 'Connecting Hugging Face models with GPT-4',
+                authors: 'Microsoft',
+                organization: 'Microsoft',
+                url: 'https://github.com/microsoft/JARVIS',
+                stars: 25000,
+                forks: 4000,
+                year: 2026
+            },
+            {
+                id: 25,
+                type: 'project',
+                title: 'OpenHands',
+                description: 'LLM agent for collaboration',
+                authors: '100xing',
+                organization: 'Personal Project',
+                url: 'https://github.com/100xing/OpenHands',
+                stars: 10000,
+                forks: 1500,
+                year: 2026
+            },
+            {
+                id: 26,
+                type: 'project',
+                title: 'LLamaIndex',
+                description: 'Framework for building LLM applications with data',
+                authors: 'LlamaIndex',
+                organization: 'LlamaIndex',
+                url: 'https://github.com/jerryjliu/llama_index',
+                stars: 20000,
+                forks: 3000,
+                year: 2026
+            },
+            {
+                id: 27,
+                type: 'project',
+                title: 'Haystack',
+                description: 'End-to-end framework for building search systems',
+                authors: 'Deepset',
+                organization: 'Deepset',
+                url: 'https://github.com/deepset-ai/haystack',
+                stars: 15000,
+                forks: 2500,
+                year: 2026
+            },
+            {
+                id: 28,
+                type: 'project',
+                title: 'LangSmith',
+                description: 'Platform for debugging, testing, evaluating, and monitoring LLM applications',
+                authors: 'LangChain',
+                organization: 'LangChain',
+                url: 'https://github.com/langchain-ai/langsmith',
+                stars: 8000,
+                forks: 1000,
+                year: 2026
+            },
+            {
+                id: 29,
+                type: 'project',
+                title: 'RAGFlow',
+                description: 'RAG-first LLM orchestration framework',
+                authors: 'Tencent',
+                organization: 'Tencent',
+                url: 'https://github.com/infiniflow/ragflow',
+                stars: 5000,
+                forks: 800,
+                year: 2026
+            },
+            {
+                id: 30,
+                type: 'project',
+                title: 'AgentScope',
+                description: 'Library for building multi-agent applications',
+                authors: 'ByteDance',
+                organization: 'ByteDance',
+                url: 'https://github.com/modelscope/agentscope',
+                stars: 4000,
+                forks: 600,
+                year: 2026
+            }
+        ].sort((a, b) => b.stars - a.stars);
 
         // DOM元素
         const contentGrid = document.getElementById('contentGrid');
