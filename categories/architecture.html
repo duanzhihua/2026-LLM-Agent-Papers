@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>架构设计 - 2026年大模型智能体论文与项目</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* 页面布局 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 领域内容区域 */
+        .category-content {
+            flex: 1;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* 领域标题 */
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        /* 领域简介 */
+        .category-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #b0c4de;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #00ffff;
+        }
+
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        /* 卡片标题 */
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        /* 卡片描述 */
+        .card .description {
+            color: #b0c4de;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* 元数据 */
+        .card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #87cefa;
+        }
+
+        /* 操作按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">🤖 LLM Agent Research</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="foundation.html">基础理论</a></li>
+                    <li><a href="architecture.html" class="active">架构设计</a></li>
+                    <li><a href="applications.html">应用场景</a></li>
+                    <li><a href="evaluation.html">评估方法</a></li>
+                    <li><a href="tools.html">工具框架</a></li>
+                    <li><a href="datasets.html">数据集</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 领域内容 -->
+        <div class="category-content">
+            <h1 class="category-title">架构设计</h1>
+            <div class="category-intro">
+                大模型智能体的架构设计研究，包括多模态融合、知识表示、推理机制等核心技术。这些研究为大模型智能体的高效运行和扩展提供了架构支撑。
+            </div>
+
+            <!-- 内容网格 -->
+            <div class="content-grid" id="contentGrid">
+                <!-- 内容将通过JavaScript动态加载 -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>正在加载数据...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>📊 数据更新于 2026年2月</p>
+            <p>❤️ 由 OpenClaw 自动收集整理</p>
+            <div class="contact-info">
+                <a href="weixin://dl/business/?t=0a8b1c2d3e4f" target="_blank">
+                    <span>💬</span>
+                    <span>微信号：NLP_ChatGPT_LLM</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 架构设计领域的论文和项目数据
+        const data = [
+            {
+                id: 1,
+                type: 'project',
+                title: 'AutoGen',
+                description: 'Multi-agent conversational framework for LLMs',
+                authors: 'Microsoft',
+                organization: 'Microsoft',
+                url: 'https://github.com/microsoft/autogen', stars: 54205, forks: 8171,
+                year: 2026
+            },
+            {
+                id: 2,
+                type: 'project',
+                title: 'LangChain',
+                description: 'Framework for developing applications powered by language models',
+                authors: 'LangChain',
+                organization: 'LangChain',
+                url: 'https://github.com/langchain-ai/langchain', stars: 125784, forks: 20693,
+                year: 2026
+            },
+            {
+                id: 3,
+                type: 'project',
+                title: 'LangGraph',
+                description: 'Graph-based framework for building complex LLM agents',
+                authors: 'LangChain',
+                organization: 'LangChain',
+                url: 'https://github.com/langchain-ai/langgraph', stars: 24168, forks: 4212,
+                year: 2026
+            },
+            {
+                id: 4,
+                type: 'project',
+                title: 'CrewAI',
+                description: 'Framework for orchestrating role-playing, autonomous AI agents',
+                authors: 'CrewAI',
+                organization: 'CrewAI',
+                url: 'https://github.com/joaomdmoura/crewai', stars: 43532, forks: 5842,
+                year: 2026
+            },
+            {
+                id: 5,
+                type: 'project',
+                title: 'MetaGPT',
+                description: 'Multi-agent framework for building complex systems',
+                authors: 'Geekan',
+                organization: 'Geekan',
+                url: 'https://github.com/geekan/MetaGPT', stars: 63817, forks: 8028,
+                year: 2026
+            }
+        ].sort((a, b) => b.stars - a.stars);
+
+        // DOM元素
+        const contentGrid = document.getElementById('contentGrid');
+
+        // 渲染卡片
+        function renderCards(items) {
+            contentGrid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p class="description">${item.description}</p>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <span>${item.authors}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>${item.organization}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⭐ ${item.stars.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>🍴 ${item.forks.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📅 ${item.year}</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn">
+                            <span>🔗 查看详情</span>
+                        </a>
+                    </div>
+                `;
+                contentGrid.appendChild(card);
+            });
+        }
+
+        // 初始化加载
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards(data);
+        });
+    </script>
+</body>
+</html>

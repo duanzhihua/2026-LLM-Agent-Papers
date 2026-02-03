@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具框架 - 2026年大模型智能体论文与项目</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* 页面布局 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 领域内容区域 */
+        .category-content {
+            flex: 1;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* 领域标题 */
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        /* 领域简介 */
+        .category-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #b0c4de;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #00ffff;
+        }
+
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        /* 卡片标题 */
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        /* 卡片描述 */
+        .card .description {
+            color: #b0c4de;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* 元数据 */
+        .card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #87cefa;
+        }
+
+        /* 操作按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">🤖 LLM Agent Research</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="foundation.html">基础理论</a></li>
+                    <li><a href="architecture.html">架构设计</a></li>
+                    <li><a href="applications.html">应用场景</a></li>
+                    <li><a href="evaluation.html">评估方法</a></li>
+                    <li><a href="tools.html" class="active">工具框架</a></li>
+                    <li><a href="datasets.html">数据集</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 领域内容 -->
+        <div class="category-content">
+            <h1 class="category-title">工具框架</h1>
+            <div class="category-intro">
+                大模型智能体的工具框架研究，包括开发工具、部署框架、调试工具等。这些研究为大模型智能体的开发、部署和运维提供了重要的支持。
+            </div>
+
+            <!-- 内容网格 -->
+            <div class="content-grid" id="contentGrid">
+                <!-- 内容将通过JavaScript动态加载 -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>正在加载数据...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>📊 数据更新于 2026年2月</p>
+            <p>❤️ 由 OpenClaw 自动收集整理</p>
+            <div class="contact-info">
+                <a href="weixin://dl/business/?t=0a8b1c2d3e4f" target="_blank">
+                    <span>💬</span>
+                    <span>微信号：NLP_ChatGPT_LLM</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 工具框架领域的论文和项目数据
+        const data = [
+            {
+                id: 1,
+                type: 'project',
+                title: 'LLamaIndex',
+                description: 'Framework for building LLM applications with data',
+                authors: 'LlamaIndex',
+                organization: 'LlamaIndex',
+                url: 'https://github.com/jerryjliu/llama_index', stars: 46766, forks: 6774,
+                year: 2026
+            },
+            {
+                id: 2,
+                type: 'project',
+                title: 'Haystack',
+                description: 'End-to-end framework for building search systems',
+                authors: 'Deepset',
+                organization: 'Deepset',
+                url: 'https://github.com/deepset-ai/haystack', stars: 24064, forks: 2581,
+                year: 2026
+            },
+            {
+                id: 3,
+                type: 'project',
+                title: 'RAGFlow',
+                description: 'RAG-first LLM orchestration framework',
+                authors: 'Tencent',
+                organization: 'Tencent',
+                url: 'https://github.com/infiniflow/ragflow', stars: 72651, forks: 8041,
+                year: 2026
+            },
+            {
+                id: 4,
+                type: 'project',
+                title: 'AgentScope',
+                description: 'Library for building multi-agent applications',
+                authors: 'ByteDance',
+                organization: 'ByteDance',
+                url: 'https://github.com/modelscope/agentscope', stars: 16112, forks: 1428,
+                year: 2026
+            },
+            {
+                id: 5,
+                type: 'paper',
+                title: 'DataMind: Open-Source LLM-Based Data Analysis Agents',
+                description: 'Open-source LLM-based data analysis agents for various data processing tasks',
+                authors: 'zjunlp',
+                organization: 'Zhejiang University',
+                url: 'https://github.com/zjunlp/DataMind', stars: 63, forks: 4,
+                venue: 'International Conference on Learning Representations / AAAI Conference on Artificial Intelligence',
+                year: 2026
+            }
+        ].sort((a, b) => b.stars - a.stars);
+
+        // DOM元素
+        const contentGrid = document.getElementById('contentGrid');
+
+        // 渲染卡片
+        function renderCards(items) {
+            contentGrid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p class="description">${item.description}</p>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <span>${item.authors}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>${item.organization}</span>
+                        </div>
+                        ${item.venue ? `
+                            <div class="meta-item">
+                                <span>📄 ${item.venue}</span>
+                            </div>
+                        ` : ''}
+                        <div class="meta-item">
+                            <span>⭐ ${item.stars.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>🍴 ${item.forks.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📅 ${item.year}</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn">
+                            <span>🔗 查看详情</span>
+                        </a>
+                    </div>
+                `;
+                contentGrid.appendChild(card);
+            });
+        }
+
+        // 初始化加载
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards(data);
+        });
+    </script>
+</body>
+</html>
