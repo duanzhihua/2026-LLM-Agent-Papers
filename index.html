@@ -76,33 +76,6 @@
             color: #b0c4de;
         }
 
-        .contact-info {
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 15px 30px;
-            display: inline-block;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .contact-info:hover {
-            background: rgba(0, 255, 255, 0.15);
-            border-color: rgba(0, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .contact-info a {
-            color: #00ffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .stats {
             display: flex;
             justify-content: center;
@@ -306,6 +279,33 @@
             z-index: 1;
         }
 
+        .contact-info {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .contact-info a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .loading {
             text-align: center;
             color: white;
@@ -377,12 +377,6 @@
         <header>
             <h1>🤖 2026年大模型智能体</h1>
             <p class="subtitle">最新研究论文与开源项目</p>
-            <div class="contact-info">
-                <a href="weixin://dl/business/?t=0a8b1c2d3e4f" target="_blank">
-                    <span>💬</span>
-                    <span>微信号：NLP_ChatGPT_LLM</span>
-                </a>
-            </div>
             <div class="stats">
                 <span>📚 100 篇精选论文</span>
                 <span>💻 100 个开源项目</span>
@@ -407,6 +401,12 @@
         <footer>
             <p>📊 数据更新于 2026年2月</p>
             <p>❤️ 由 OpenClaw 自动收集整理</p>
+            <div class="contact-info">
+                <a href="weixin://dl/business/?t=0a8b1c2d3e4f" target="_blank">
+                    <span>💬</span>
+                    <span>微信号：NLP_ChatGPT_LLM</span>
+                </a>
+            </div>
         </footer>
     </div>
 
@@ -421,7 +421,7 @@
                 description: 'This paper presents cutting-edge research on large language model agents, exploring new architectures and applications in various domains.',
                 authors: `Research Team ${i + 1}`,
                 organization: `Advanced Computing Institute ${i + 1}`,
-                url: `https://github.com/research-team-${i + 1}/llm-agent-paper-${i + 1}`,
+                url: `https://github.com/`,
                 stars: Math.floor(Math.random() * 500),
                 forks: Math.floor(Math.random() * 100),
                 venue: i % 5 === 0 ? 'International Conference on Learning Representations' : 
@@ -439,7 +439,7 @@
                 description: 'A comprehensive framework for building and deploying large language model agents with advanced capabilities.',
                 authors: `Development Team ${i + 1}`,
                 organization: `Tech Company ${i + 1}`,
-                url: `https://github.com/development-team-${i + 1}/llm-agent-framework-${i + 1}`,
+                url: `https://github.com/`,
                 stars: Math.floor(Math.random() * 10000) + 500,
                 forks: Math.floor(Math.random() * 2000),
                 year: 2026
@@ -483,10 +483,7 @@
                     </div>
                     <div class="actions">
                         <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn">
-                            <span>🔗 查看</span>
-                        </a>
-                        <a href="${item.url}/stargazers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                            <span>⭐ Star</span>
+                            <span>🔗 查看详情</span>
                         </a>
                     </div>
                 `;
