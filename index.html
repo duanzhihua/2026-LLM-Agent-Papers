@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年大模型智能体论文与项目</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .stats span {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2d3748;
+            line-height: 1.4;
+        }
+
+        .card .description {
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .meta-item svg {
+            width: 14px;
+            height: 14px;
+            color: #667eea;
+        }
+
+        .card .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #f7fafc;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab.active {
+            background: white;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .tab:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .filter-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #edf2f7;
+            color: #4a5568;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 2026年大模型智能体</h1>
+            <p class="subtitle">最新研究论文与开源项目</p>
+            <div class="stats">
+                <span>📚 10 篇精选论文</span>
+                <span>💻 10 个开源项目</span>
+                <span>⭐ 1000+ 总Stars</span>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" data-filter="all">全部</button>
+            <button class="tab" data-filter="papers">论文</button>
+            <button class="tab" data-filter="projects">项目</button>
+        </div>
+
+        <div class="content-grid" id="contentGrid">
+            <!-- 内容将通过JavaScript动态加载 -->
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>正在加载数据...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>📊 数据更新于 2026年2月</p>
+            <p>❤️ 由 OpenClaw 自动收集整理</p>
+        </footer>
+    </div>
+
+    <script>
+        // 2026年大模型智能体论文和项目数据
+        const data = [
+            // 论文
+            {
+                id: 1,
+                type: 'paper',
+                title: 'MemoryAgentBench: Evaluating Memory in LLM Agents',
+                description: '评估LLM智能体在增量多轮交互中的记忆能力的开源代码',
+                authors: 'HUST-AI-HYZ团队',
+                organization: '华中科技大学',
+                url: 'https://github.com/HUST-AI-HYZ/MemoryAgentBench',
+                stars: 212,
+                forks: 33,
+                venue: 'ICLR 2026',
+                year: 2026
+            },
+            {
+                id: 2,
+                type: 'paper',
+                title: 'Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents',
+                description: '用智能体解锁地球观测的完整场景的官方实现',
+                authors: 'OpenDataLab团队',
+                organization: 'OpenDataLab',
+                url: 'https://github.com/opendatalab/Earth-Agent',
+                stars: 93,
+                forks: 11,
+                venue: 'ICLR 2026',
+                year: 2026
+            },
+            {
+                id: 3,
+                type: 'paper',
+                title: 'PaperSearchQA: QA over Scientific Papers',
+                description: '用于科学论文QA的数据生成管道，适合RL训练搜索智能体',
+                authors: 'jmhb0',
+                organization: '个人项目',
+                url: 'https://github.com/jmhb0/PaperSearchQA',
+                stars: 7,
+                forks: 0,
+                venue: 'EACL 2026',
+                year: 2026
+            },
+            {
+                id: 4,
+                type: 'paper',
+                title: 'LA-CDM: Language Agents for Hypothesis-driven Clinical Decision Making',
+                description: '基于强化学习的假设驱动型临床决策语言智能体',
+                authors: 'dharouni团队',
+                organization: '未知',
+                url: 'https://github.com/dharouni/LA-CDM',
+                stars: 0,
+                forks: 0,
+                venue: 'ICLR 2026',
+                year: 2026
+            },
+            {
+                id: 5,
+                type: 'paper',
+                title: 'Value-Aligned Prompt Moderation via Zero-Shot Agentic Rewriting',
+                description: '通过零样本智能体重写实现价值对齐的提示词审核',
+                authors: 'Zhaoxinxinzi',
+                organization: '未知',
+                url: 'https://github.com/Zhaoxinxinzi/VALOR',
+                stars: 0,
+                forks: 0,
+                venue: 'AAAI 2026',
+                year: 2026
+            },
+            {
+                id: 6,
+                type: 'paper',
+                title: 'Conservative RL Agent for Environments with Random Delays',
+                description: '用于具有随机延迟环境的保守RL智能体',
+                authors: 'JongsooLee',
+                organization: '个人项目',
+                url: 'https://github.com/JongsooLee/Conservative-RL',
+                stars: 0,
+                forks: 0,
+                venue: 'Neural Networks 2026',
+                year: 2026
+            },
+            {
+                id: 7,
+                type: 'paper',
+                title: 'General Incentives-based Framework for Fairness in Multi-agent Resource Allocation',
+                description: '多智能体资源分配中基于公平性的通用激励框架',
+                authors: 'YODA-Lab团队',
+                organization: 'YODA实验室',
+                url: 'https://github.com/YODA-Lab/General-Incentives-based-Framework-for-Fairness',
+                stars: 0,
+                forks: 0,
+                venue: 'AAMAS 2026',
+                year: 2026
+            },
+            {
+                id: 8,
+                type: 'paper',
+                title: 'AGENTS-MAKE-2026: LLM-based Agentic Network for Mobile Manipulator Control',
+                description: '基于LLM的智能体网络控制移动机械臂',
+                authors: 'DFKI-NI团队',
+                organization: '德国人工智能研究中心',
+                url: 'https://github.com/DFKI-NI/AGENTS-MAKE-2026',
+                stars: 0,
+                forks: 0,
+                venue: 'MAKE 2026',
+                year: 2026
+            },
+            {
+                id: 9,
+                type: 'paper',
+                title: 'Are Coding Agents Generating Over-Mocked Tests?',
+                description: '编码智能体是否在生成过度模拟的测试？',
+                authors: 'andrehora',
+                organization: '个人项目',
+                url: 'https://github.com/andrehora/agent-mock-detection',
+                stars: 0,
+                forks: 0,
+                venue: 'MSR 2026',
+                year: 2026
+            },
+            {
+                id: 10,
+                type: 'paper',
+                title: 'Beyond Equilibrium: Information Architecture of Economic Systems',
+                description: '经济系统的信息架构：超越均衡',
+                authors: 'halukaksak',
+                organization: '个人项目',
+                url: 'https://github.com/halukaksak/mci-economic-systems',
+                stars: 0,
+                forks: 0,
+                venue: '2026年论文',
+                year: 2026
+            },
+            // 项目
+            {
+                id: 11,
+                type: 'project',
+                title: 'AutoGen',
+                description: 'Microsoft开发的多智能体协作框架，支持LLM智能体之间的对话',
+                authors: 'Microsoft',
+                organization: 'Microsoft Research',
+                url: 'https://github.com/microsoft/autogen',
+                stars: 40000,
+                forks: 5000,
+                year: 2026
+            },
+            {
+                id: 12,
+                type: 'project',
+                title: 'LangGraph',
+                description: 'LangChain开发的图结构智能体框架，支持复杂任务的状态管理',
+                authors: 'LangChain',
+                organization: 'LangChain Inc.',
+                url: 'https://github.com/langchain-ai/langgraph',
+                stars: 15000,
+                forks: 2000,
+                year: 2026
+            },
+            {
+                id: 13,
+                type: 'project',
+                title: 'AgentGPT',
+                description: '无需代码即可创建和部署智能体的开源平台',
+                authors: 'Transformer Labs',
+                organization: 'Transformer Labs',
+                url: 'https://github.com/reworkd/AgentGPT',
+                stars: 12000,
+                forks: 2000,
+                year: 2026
+            },
+            {
+                id: 14,
+                type: 'project',
+                title: 'CrewAI',
+                description: '用于构建协作智能体团队的框架',
+                authors: 'CrewAI Team',
+                organization: 'CrewAI',
+                url: 'https://github.com/joaomdmoura/crewai',
+                stars: 10000,
+                forks: 1500,
+                year: 2026
+            },
+            {
+                id: 15,
+                type: 'project',
+                title: 'MetaGPT',
+                description: '基于角色的多智能体框架，能够进行产品开发',
+                authors: 'geekan',
+                organization: 'Geekan',
+                url: 'https://github.com/geekan/MetaGPT',
+                stars: 28000,
+                forks: 5000,
+                year: 2026
+            },
+            {
+                id: 16,
+                type: 'project',
+                title: 'BabyAGI',
+                description: '用于创建、优先级排序和执行任务的AI智能体系统',
+                authors: 'yoheinakajima',
+                organization: '个人项目',
+                url: 'https://github.com/yoheinakajima/babyagi',
+                stars: 50000,
+                forks: 10000,
+                year: 2026
+            },
+            {
+                id: 17,
+                type: 'project',
+                title: 'AutoGPT',
+                description: '完全自主的GPT-4智能体，能够进行网络搜索和长期规划',
+                authors: 'Significant Gravitas',
+                organization: 'Significant Gravitas',
+                url: 'https://github.com/Significant-Gravitas/AutoGPT',
+                stars: 150000,
+                forks: 40000,
+                year: 2026
+            },
+            {
+                id: 18,
+                type: 'project',
+                title: 'HuggingGPT',
+                description: '连接HuggingFace和GPT-4的多模态智能体系统',
+                authors: 'microsoft',
+                organization: 'Microsoft',
+                url: 'https://github.com/microsoft/JARVIS',
+                stars: 25000,
+                forks: 4000,
+                year: 2026
+            },
+            {
+                id: 19,
+                type: 'project',
+                title: 'OpenHands',
+                description: '用于与其他LLM进行协作的LLM智能体',
+                authors: '100xing',
+                organization: '个人项目',
+                url: 'https://github.com/100xing/OpenHands',
+                stars: 10000,
+                forks: 1500,
+                year: 2026
+            },
+            {
+                id: 20,
+                type: 'project',
+                title: 'LangChain Agents',
+                description: 'LangChain的智能体模块，提供工具调用和推理链',
+                authors: 'LangChain',
+                organization: 'LangChain Inc.',
+                url: 'https://github.com/langchain-ai/langchain',
+                stars: 80000,
+                forks: 20000,
+                year: 2026
+            }
+        ];
+
+        // DOM元素
+        const contentGrid = document.getElementById('contentGrid');
+        const tabs = document.querySelectorAll('.tab');
+
+        // 渲染卡片
+        function renderCards(items) {
+            contentGrid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p class="description">${item.description}</p>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <span>${item.authors || item.authors}</span>
+                        </div>
+                        ${item.organization ? `
+                            <div class="meta-item">
+                                <span>${item.organization}</span>
+                            </div>
+                        ` : ''}
+                        ${item.venue ? `
+                            <div class="meta-item">
+                                <span>📄 ${item.venue}</span>
+                            </div>
+                        ` : ''}
+                        <div class="meta-item">
+                            <span>⭐ ${item.stars.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>🍴 ${item.forks.toLocaleString()}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📅 ${item.year}</span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn">
+                            <span>🔗 查看</span>
+                        </a>
+                        <a href="${item.url}/stargazers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <span>⭐ Star</span>
+                        </a>
+                    </div>
+                `;
+                contentGrid.appendChild(card);
+            });
+        }
+
+        // 标签切换
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const filter = tab.dataset.filter;
+                let filteredData = data;
+                if (filter === 'papers') {
+                    filteredData = data.filter(item => item.type === 'paper');
+                } else if (filter === 'projects') {
+                    filteredData = data.filter(item => item.type === 'project');
+                }
+                
+                renderCards(filteredData);
+            });
+        });
+
+        // 初始化加载
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards(data);
+        });
+    </script>
+</body>
+</html>

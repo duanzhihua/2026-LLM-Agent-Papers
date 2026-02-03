@@ -1,0 +1,14 @@
+title: 2026年大模型智能体论文与项目
+description: 2026年最新大模型智能体论文和项目收集
+baseurl: "/2026-LLM-Agent-Papers"
+url: "https://duanzhihua.github.io"
+github_username: duanzhihua
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - index.html
